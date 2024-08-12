@@ -19,23 +19,23 @@ type RenderFunction = (node: React.ReactNode) => React.ReactNode;
 export function composeComponents<
   AP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
   BP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
   BP extends UnknownProps,
   CP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -43,10 +43,10 @@ export function composeComponents<
   CP extends UnknownProps,
   DP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -55,11 +55,11 @@ export function composeComponents<
   DP extends UnknownProps,
   EP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
-  e: [ComponentWithChildren<EP>, EP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
+  e: [ComponentWithChildren<EP>, Omit<EP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -69,12 +69,12 @@ export function composeComponents<
   EP extends UnknownProps,
   FP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
-  e: [ComponentWithChildren<EP>, EP],
-  f: [ComponentWithChildren<FP>, FP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
+  e: [ComponentWithChildren<EP>, Omit<EP, "children">],
+  f: [ComponentWithChildren<FP>, Omit<FP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -85,13 +85,13 @@ export function composeComponents<
   FP extends UnknownProps,
   GP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
-  e: [ComponentWithChildren<EP>, EP],
-  f: [ComponentWithChildren<FP>, FP],
-  g: [ComponentWithChildren<GP>, GP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
+  e: [ComponentWithChildren<EP>, Omit<EP, "children">],
+  f: [ComponentWithChildren<FP>, Omit<FP, "children">],
+  g: [ComponentWithChildren<GP>, Omit<GP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -103,14 +103,14 @@ export function composeComponents<
   GP extends UnknownProps,
   HP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
-  e: [ComponentWithChildren<EP>, EP],
-  f: [ComponentWithChildren<FP>, FP],
-  g: [ComponentWithChildren<GP>, GP],
-  h: [ComponentWithChildren<HP>, HP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
+  e: [ComponentWithChildren<EP>, Omit<EP, "children">],
+  f: [ComponentWithChildren<FP>, Omit<FP, "children">],
+  g: [ComponentWithChildren<GP>, Omit<GP, "children">],
+  h: [ComponentWithChildren<HP>, Omit<HP, "children">],
 ): RenderFunction;
 export function composeComponents<
   AP extends UnknownProps,
@@ -123,15 +123,15 @@ export function composeComponents<
   HP extends UnknownProps,
   IP extends UnknownProps,
 >(
-  a: [ComponentWithChildren<AP>, AP],
-  b: [ComponentWithChildren<BP>, BP],
-  c: [ComponentWithChildren<CP>, CP],
-  d: [ComponentWithChildren<DP>, DP],
-  e: [ComponentWithChildren<EP>, EP],
-  f: [ComponentWithChildren<FP>, FP],
-  g: [ComponentWithChildren<GP>, GP],
-  h: [ComponentWithChildren<HP>, HP],
-  i: [ComponentWithChildren<IP>, IP],
+  a: [ComponentWithChildren<AP>, Omit<AP, "children">],
+  b: [ComponentWithChildren<BP>, Omit<BP, "children">],
+  c: [ComponentWithChildren<CP>, Omit<CP, "children">],
+  d: [ComponentWithChildren<DP>, Omit<DP, "children">],
+  e: [ComponentWithChildren<EP>, Omit<EP, "children">],
+  f: [ComponentWithChildren<FP>, Omit<FP, "children">],
+  g: [ComponentWithChildren<GP>, Omit<GP, "children">],
+  h: [ComponentWithChildren<HP>, Omit<HP, "children">],
+  i: [ComponentWithChildren<IP>, Omit<IP, "children">],
 ): RenderFunction;
 export function composeComponents(
   ...args: [ComponentWithChildren<UnknownProps>, Omit<UnknownProps, "children">][]
