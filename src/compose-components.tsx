@@ -12,10 +12,6 @@ type RenderFunction = (node: React.ReactNode) => React.ReactNode;
 
 // #region Functions
 
-/**
- * A function that returns a render function that composes multiple provider components.
- * @param args Tuples of a provider component and its props.
- */
 export function composeComponents<
   AP extends UnknownProps,
 >(
@@ -136,6 +132,15 @@ export function composeComponents<
 export function composeComponents(
   ...args: [ComponentWithChildren<UnknownProps>, Omit<UnknownProps, "children">][]
 ): RenderFunction;
+/**
+ * Takes a list of components and their props and returns a render function that composes them.
+ * @returns A render function that composes the components.
+ * @example
+ * ```tsx
+ * const renderComponents = composeComponents([ProviderA, { value: "A" }], [ProviderB, { value: "B" }]);
+ * //    ^? (children: React.ReactNode) => React.ReactNode
+ * ```
+ */
 export function composeComponents(
   ...args: [ComponentWithChildren<UnknownProps>, Omit<UnknownProps, "children">][]
 ): (children: React.ReactNode) => React.ReactNode {
@@ -144,11 +149,11 @@ export function composeComponents(
 
 export type ComposeComponentsProps = {
   /**
-   * The children to nest within the composed providers.
+   * The children to nest within the composed components.
    */
   children?: React.ReactNode;
   /**
-   * The render prop that consumes the render function returned by `composeComponents`.
+   * A render prop that consumes the render function returned by `composeComponents`.
    */
   renderComponents: RenderFunction;
 };
@@ -158,12 +163,47 @@ export type ComposeComponentsProps = {
 // #region Components
 
 /**
- * A component that composes multiple provider components into a single provider using the render prop pattern.
+ * A component that composes multiple components into a single component.
+ * @returns React.ReactNode
  * @example
  * ```tsx
- * <ComposeComponents renderComponents={composeComponents([ProviderA, { value: "A" }], [ProviderB, { value: "B" }])}>
- *   {children}
- * </ComposeComponents>
+ * import React from "react";
+ * import { ComposeComponents, composeComponents } from "compose-components";
+ *
+ * const renderComponents = composeComponents(
+ *   [LocaleProvider, { locale: "en" }],
+ *   [ConfigProvider, { config: "config" }],
+ *   [LoggerProvider, { logger: "logger" }],
+ * );
+ *
+ * function App() {
+ *   return (
+ *     <ComposeComponents renderComponents={renderComponents}>
+ *       <ChildComponent />
+ *     </ComposeComponents>
+ *   );
+ * }
+ * ```
+ * @example
+ * ```tsx
+ * import React, { useMemo } from "react";
+ * import { ComposeComponents, composeComponents } from "compose-components";
+ *
+ * function App({ locale, config, logger }) {
+ *   const renderComponents = useMemo(() =>
+ *     composeComponents(
+ *       [LocaleProvider, { locale }],
+ *       [ConfigProvider, { config }],
+ *       [LoggerProvider, { logger }],
+ *     ), [locale, config, logger]);
+ *
+ *   return (
+ *     <ComposeComponents renderComponents={renderComponents}>
+ *       <ChildComponent />
+ *     </ComposeComponents>
+ *   );
+ * }
+ * ```
  */
 export function ComposeComponents({ children, renderComponents }: ComposeComponentsProps) {
   return renderComponents(children);

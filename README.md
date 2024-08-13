@@ -18,7 +18,6 @@ const App = () => (
     renderComponents={composeComponents(
       [PaletteProvider, { mode: "light" }],
       [LayoutProvider, { layout: "default" }],
-      [SizingProvider, { size: "md" }],
       [TypographyProvider, { font: "sans" }],
     )}
   >
@@ -28,7 +27,6 @@ const App = () => (
 
 declare function PaletteProvider({ children }: React.PropsWithChildren<{ mode: "light" | "dark" }>): React.ReactNode;
 declare function LayoutProvider({ children }: React.PropsWithChildren<{ layout: "default" | "full" }>): React.ReactNode;
-declare function SizingProvider({ children }: React.PropsWithChildren<{ size: "sm" | "md" | "lg" }>): React.ReactNode;
 declare function TypographyProvider({ children }: React.PropsWithChildren<{ font: "sans" | "serif" }>): React.ReactNode;
 ```
 

@@ -1,3 +1,4 @@
+/* eslint-disable @eslint-react/no-missing-key */
 import React from "react";
 
 import { ComposeComponents, composeComponents } from "compose-components";
@@ -15,45 +16,43 @@ const Context8 = React.createContext("context8");
 const Context9 = React.createContext("context9");
 
 type ProviderProps = React.PropsWithChildren<{
-  id: string;
-  title: string;
-  description: string;
+  value: string;
 }>;
 
-function Provider1({ children }: ProviderProps) {
-  return <Context1.Provider value="value1">{children}</Context1.Provider>;
+function Provider1({ children, value }: ProviderProps) {
+  return <Context1.Provider value={value}>{children}</Context1.Provider>;
 }
 
-function Provider2({ children }: ProviderProps) {
-  return <Context2.Provider value="value2">{children}</Context2.Provider>;
+function Provider2({ children, value }: ProviderProps) {
+  return <Context2.Provider value={value}>{children}</Context2.Provider>;
 }
 
-function Provider3({ children }: ProviderProps) {
-  return <Context3.Provider value="value3">{children}</Context3.Provider>;
+function Provider3({ children, value }: ProviderProps) {
+  return <Context3.Provider value={value}>{children}</Context3.Provider>;
 }
 
-function Provider4({ children }: ProviderProps) {
-  return <Context4.Provider value="value4">{children}</Context4.Provider>;
+function Provider4({ children, value }: ProviderProps) {
+  return <Context4.Provider value={value}>{children}</Context4.Provider>;
 }
 
-function Provider5({ children }: ProviderProps) {
-  return <Context5.Provider value="value5">{children}</Context5.Provider>;
+function Provider5({ children, value }: ProviderProps) {
+  return <Context5.Provider value={value}>{children}</Context5.Provider>;
 }
 
-function Provider6({ children }: ProviderProps) {
-  return <Context6.Provider value="value6">{children}</Context6.Provider>;
+function Provider6({ children, value }: ProviderProps) {
+  return <Context6.Provider value={value}>{children}</Context6.Provider>;
 }
 
-function Provider7({ children }: ProviderProps) {
-  return <Context7.Provider value="value7">{children}</Context7.Provider>;
+function Provider7({ children, value }: ProviderProps) {
+  return <Context7.Provider value={value}>{children}</Context7.Provider>;
 }
 
-function Provider8({ children }: ProviderProps) {
-  return <Context8.Provider value="value8">{children}</Context8.Provider>;
+function Provider8({ children, value }: ProviderProps) {
+  return <Context8.Provider value={value}>{children}</Context8.Provider>;
 }
 
-function Provider9({ children }: ProviderProps) {
-  return <Context9.Provider value="value9">{children}</Context9.Provider>;
+function Provider9({ children, value }: ProviderProps) {
+  return <Context9.Provider value={value}>{children}</Context9.Provider>;
 }
 
 const bench = new Bench({ time: 300 })
@@ -62,15 +61,15 @@ const bench = new Bench({ time: 300 })
       ComposeProvider,
       {
         contexts: [
-          <Provider1 id="1" title="title1" description="description1" />,
-          <Provider2 id="2" title="title2" description="description2" />,
-          <Provider3 id="3" title="title3" description="description3" />,
-          <Provider4 id="4" title="title4" description="description4" />,
-          <Provider5 id="5" title="title5" description="description5" />,
-          <Provider6 id="6" title="title6" description="description6" />,
-          <Provider7 id="7" title="title7" description="description7" />,
-          <Provider8 id="8" title="title8" description="description8" />,
-          <Provider9 id="9" title="title9" description="description9" />,
+          <Provider1 value="1" />,
+          <Provider2 value="2" />,
+          <Provider3 value="3" />,
+          <Provider4 value="4" />,
+          <Provider5 value="5" />,
+          <Provider6 value="6" />,
+          <Provider7 value="7" />,
+          <Provider8 value="8" />,
+          <Provider9 value="9" />,
         ],
       },
       "children",
@@ -81,15 +80,15 @@ const bench = new Bench({ time: 300 })
       ComposeComponents,
       {
         renderComponents: composeComponents(
-          [Provider1, { id: "1", title: "title1", description: "description1" }],
-          [Provider2, { id: "2", title: "title2", description: "description2" }],
-          [Provider3, { id: "3", title: "title3", description: "description3" }],
-          [Provider4, { id: "4", title: "title4", description: "description4" }],
-          [Provider5, { id: "5", title: "title5", description: "description5" }],
-          [Provider6, { id: "6", title: "title6", description: "description6" }],
-          [Provider7, { id: "7", title: "title7", description: "description7" }],
-          [Provider8, { id: "8", title: "title8", description: "description8" }],
-          [Provider9, { id: "9", title: "title9", description: "description9" }],
+          [Provider1, { value: "1" }],
+          [Provider2, { value: "2" }],
+          [Provider3, { value: "3" }],
+          [Provider4, { value: "4" }],
+          [Provider5, { value: "5" }],
+          [Provider6, { value: "6" }],
+          [Provider7, { value: "7" }],
+          [Provider8, { value: "8" }],
+          [Provider9, { value: "9" }],
         ),
       },
       "children",

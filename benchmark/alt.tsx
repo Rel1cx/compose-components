@@ -8,7 +8,7 @@ export const ComposeProvider = memo(({
   contexts,
   children,
 }: ComposeProviderProps) =>
-  contexts.reduceRight<React.ReactNode>(
+  contexts.reduceRight(
     (children: React.ReactNode, parent) =>
       cloneElement(
         parent,
