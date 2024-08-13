@@ -9,36 +9,33 @@ export default [
     ignores: [
       "node_modules",
       "dist",
+      "eslint.config.mjs",
+      "eslint.config.d.ts",
     ],
   },
-  // JavaScript rules
   js.configs.recommended,
-  // TypeScript rules
   ...tseslint.configs.recommendedTypeChecked,
-  // TypeScript languageOptions
   {
+    ignores: ["*.config.ts"],
     languageOptions: {
       parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        projectService: true
       },
     },
   },
-  // TypeScript languageOptions for config files
-  {
-    files: ["*.config.{js,ts}", "*.d.ts"],
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
-    },
-  },
-  // React rules
   {
     files: ["src/**/*.{ts,tsx}"],
     ...react.configs["recommended-type-checked"],
   },
-  // Disable type checking for JavaScript files
+  {
+    files: ["*.config.ts"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.node.json",
+        projectService: false
+      },
+    },
+  },
   {
     files: ["*.js"],
     ...tseslint.configs.disableTypeChecked,

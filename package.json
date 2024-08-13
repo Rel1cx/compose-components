@@ -31,20 +31,20 @@
     "lint:type": "tsc --noEmit"
   },
   "devDependencies": {
-    "@eslint-react/eslint-plugin": "1.10.0",
-    "@eslint/js": "9.9.0",
-    "@tsconfig/node22": "22.0.0",
-    "@tsconfig/strictest": "2.0.5",
-    "@types/node": "22.2.0",
+    "@eslint-react/eslint-plugin": "^1.10.1-beta.4",
+    "@eslint/js": "^9.9.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
-    "eslint": "9.9.0",
-    "eslint-plugin-react-hooks": "4.6.2",
-    "markdownlint": "0.34.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "markdownlint": "^0.34.0",
     "react": "^18.3.1",
     "tinybench": "2.9.0",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "8.1.0"
+    "typescript": "^5.6.0-dev.20240813",
+    "typescript-eslint": "^8.1.0"
   },
   "peerDependencies": {
     "react": "^18.3.1"
