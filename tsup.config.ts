@@ -1,11 +1,11 @@
-import { defineConfig } from "tsup";
+import type { Options } from "tsup";
 
-export default defineConfig(() => ({
+export default {
   clean: true,
   dts: true,
   entry: ["src/index.ts"],
   format: ["cjs", "esm"],
-  minify: false,
+  minify: true,
   outDir: "dist",
   platform: "neutral",
   shims: false,
@@ -13,4 +13,4 @@ export default defineConfig(() => ({
   splitting: false,
   target: "es2021",
   treeshake: true,
-}));
+} satisfies Options;

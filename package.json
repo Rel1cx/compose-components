@@ -1,6 +1,6 @@
 {
   "name": "compose-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "author": "Eva1ent<rel1cx@proton.me>",
   "sideEffects": false,
@@ -38,11 +38,11 @@
     "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
     "eslint": "^9.9.0",
-    "eslint-plugin-jsdoc": "50.2.0",
+    "eslint-plugin-jsdoc": "^50.2.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "markdownlint": "^0.34.0",
     "react": "^18.3.1",
-    "tinybench": "2.9.0",
+    "tinybench": "^2.9.0",
     "tsup": "^8.2.4",
     "typescript": "^5.6.0-dev.20240813",
     "typescript-eslint": "^8.1.0"
