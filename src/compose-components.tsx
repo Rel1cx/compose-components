@@ -130,10 +130,11 @@ export function composeComponents<
   i: [ComponentWithChildren<IP>, Omit<IP, "children">],
 ): RenderFunction;
 export function composeComponents(
-  ...args: [ComponentWithChildren<UnknownProps>, Omit<UnknownProps, "children">][]
+  ...args: [ComponentWithChildren, Omit<UnknownProps, "children">][]
 ): RenderFunction;
 /**
  * Takes a list of components and their props and returns a render function that composes them.
+ *
  * @returns A render function that composes the components.
  * @example
  * ```tsx
@@ -142,7 +143,7 @@ export function composeComponents(
  * ```
  */
 export function composeComponents(
-  ...args: [ComponentWithChildren<UnknownProps>, Omit<UnknownProps, "children">][]
+  ...args: [ComponentWithChildren, Omit<UnknownProps, "children">][]
 ): (children: React.ReactNode) => React.ReactNode {
   return children => args.reduceRight((acc, [Provider, props]) => <Provider {...props}>{acc}</Provider>, children);
 }
@@ -164,6 +165,7 @@ export type ComposeComponentsProps = {
 
 /**
  * A component that composes multiple components into a single component.
+ *
  * @returns React.ReactNode
  * @example
  * ```tsx
@@ -184,6 +186,7 @@ export type ComposeComponentsProps = {
  *   );
  * }
  * ```
+ *
  * @example
  * ```tsx
  * import React, { useMemo } from "react";
@@ -205,6 +208,7 @@ export type ComposeComponentsProps = {
  * }
  * ```
  */
+// eslint-disable-next-line functional/prefer-immutable-types
 export function ComposeComponents({ children, renderComponents }: ComposeComponentsProps) {
   return renderComponents(children);
 }
