@@ -208,7 +208,6 @@ export type ComposeComponentsProps = {
  * }
  * ```
  */
-// eslint-disable-next-line functional/prefer-immutable-types
 export function ComposeComponents({ children, renderComponents }: ComposeComponentsProps) {
   return renderComponents(children);
 }

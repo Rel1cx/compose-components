@@ -1,5 +1,3 @@
-/* eslint-disable react/no-missing-key */
-/* eslint-disable @eslint-react/no-missing-key */
 import React from "react";
 
 import { ComposeComponents, composeComponents } from "compose-components";
